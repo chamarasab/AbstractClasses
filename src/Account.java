@@ -3,6 +3,9 @@ abstract class Account {
     protected String name;
     protected double balance;
 
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_RESET = "\u001B[0m";
+
     public String getAccNo() {
         return accNo;
     }
@@ -34,8 +37,8 @@ abstract class Account {
     public abstract void withdraw(double amount);
 
     public void display(){
-        System.out.println("Account No : " + getAccNo());
+        System.out.println(ANSI_BLUE + "Account No : " + getAccNo());
         System.out.println("Name : " + getName());
-        System.out.println("Balance : " + getBalance());
+        System.out.println("Balance : " + getBalance() + ANSI_RESET);
     }
 }

@@ -46,7 +46,7 @@ public class App {
             a = scanner.next();
             System.out.println(ANSI_CYAN + "Enter Name : " + ANSI_RESET);
             n = scanner.next();
-            System.out.println(ANSI_CYAN + "Enter deposit amount : " + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "Enter initial deposit amount : " + ANSI_RESET);
             b = scanner.nextDouble();
 
             Account saving = new Saving(a, n, b);
@@ -58,6 +58,13 @@ public class App {
             withdraw = scanner.nextDouble();
 
             saving.withdraw(withdraw);
+
+            saving.display();
+
+            System.out.println(ANSI_GREEN + "Enter Deposit Amount : " + ANSI_RESET);
+            double deposit;
+            deposit = scanner.nextDouble();
+            saving.deposit(deposit);
 
             saving.display();
         }
